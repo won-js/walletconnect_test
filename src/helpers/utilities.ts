@@ -126,6 +126,16 @@ export function getChainData(chainId: number): IChainData {
   return chainData;
 }
 
+export function isAvalanche(chainId: number): boolean {
+  const chainData = getChainData(chainId);
+
+  if(chainData.chain.includes("AVAX")) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 export function encodePersonalMessage(msg: string): string {
   const data = ethUtil.toBuffer(convertUtf8ToHex(msg));
   const buf = Buffer.concat([

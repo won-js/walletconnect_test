@@ -18,7 +18,7 @@ import {
   hashTypedDataMessage,
   hashMessage,
 } from "./helpers/utilities";
-import { convertAmountToRawNumber, convertStringToHex } from "./helpers/bignumber";
+import { convertStringToHex } from "./helpers/bignumber";
 import { IAssetData } from "./helpers/types";
 import Banner from "./components/Banner";
 import AccountAssets from "./components/AccountAssets";
@@ -299,9 +299,7 @@ class App extends React.Component<any, any> {
     const nonce = sanitizeHex(convertStringToHex(_nonce));
 
     // gasPrice
-    const gasPrices = await apiGetGasPrices();
-    const _gasPrice = gasPrices.slow.price;
-    const gasPrice = sanitizeHex(convertStringToHex(convertAmountToRawNumber(_gasPrice, 9)));
+    const gasPrice = await apiGetGasPrices(chainId);
 
     // gasLimit
     const _gasLimit = 21000;
@@ -374,9 +372,7 @@ class App extends React.Component<any, any> {
     const nonce = sanitizeHex(convertStringToHex(_nonce));
 
     // gasPrice
-    const gasPrices = await apiGetGasPrices();
-    const _gasPrice = gasPrices.slow.price;
-    const gasPrice = sanitizeHex(convertStringToHex(convertAmountToRawNumber(_gasPrice, 9)));
+    const gasPrice = await apiGetGasPrices(chainId);
 
     // gasLimit
     const _gasLimit = 21000;

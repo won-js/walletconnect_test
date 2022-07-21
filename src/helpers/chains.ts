@@ -273,4 +273,20 @@ export const SUPPORTED_CHAINS: IChainData[] = [
     chain_id: 10,
     network_id: 10,
   },
+  {
+    name: "Avalanche Subnet Test",
+    short_name: "Subnet",
+    chain: "AVAX",
+    network: "subnet",
+    chain_id: 4322,
+    network_id: 4322,
+    rpc_url: "http://54.180.31.198:9650/ext/bc/28Ln3UggGRNyWKXS7HPAJHGkSVxZX6EoYDNKpQNopTJrQG4BvU/rpc",
+    native_currency: {
+      symbol: "AVAX",
+      name: "Avalanche",
+      decimals: "18",
+      contractAddress: "",
+      balance: "",
+    },
+  },
 ];
